@@ -16,7 +16,8 @@ from pytorch_ner.prepare_data import (
     get_token2idx,
     prepare_conll_data_format,
     DefaultPrepareData,
-    PrepareDataABC
+    PrepareDataABC,
+    BertTokenPrepareData
 )
 from pytorch_ner.save import save_model
 from pytorch_ner.train import train_loop
@@ -40,7 +41,7 @@ def _train(
 
     # tokens / labels sequences
 
-    prepare_instance :PrepareDataABC=DefaultPrepareData()
+    prepare_instance :PrepareDataABC= BertTokenPrepareData()
     train_token_seq, train_label_seq = prepare_instance.prepare_conll_data_format(
         path=config["data"]["train_data"]["path"],
         sep=config["data"]["train_data"]["sep"],

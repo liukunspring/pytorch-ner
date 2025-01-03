@@ -1,8 +1,10 @@
 from typing import Dict, List, Tuple
-
+import os
 from tqdm import tqdm
 from abc import ABC, abstractmethod
-
+import copy
+from transformers import AutoTokenizer
+PROJECT_ROOT= os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 class PrepareDataABC(ABC):
     @abstractmethod
     def prepare_conll_data_format(
@@ -13,6 +15,49 @@ class PrepareDataABC(ABC):
         verbose: bool = True,
     ) -> Tuple[List[List[str]], List[List[str]]]:
         pass 
+class BertTokenPrepareData(PrepareDataABC): 
+    def __init__(self):
+        super().__init__()
+        self.auto_tokenizer = AutoTokenizer.from_pretrained(os.path.join(PROJECT_ROOT,'bert-base-chinese'))
+    def prepare_conll_data_format(
+        self,
+        path: str,
+        sep: str = "\t",
+        lower: bool = True,
+        verbose: bool = True,
+    ) -> Tuple[List[List[str]], List[List[str]]]:
+        token_seq = []
+        label_seq = []
+        with open(path, mode="r") as fp:
+            tokens = []
+            labels = []
+            if verbose:
+                fp = tqdm(fp)
+            for line in fp:
+                if line != "\n":
+                    token, label = line.strip().split(sep)
+                    if lower:
+                        token = token.lower()
+                    # 这里要把token进行特殊化处理
+                    
+                    bert_token_ids=self.auto_tokenizer(token,add_special_tokens=False)['input_ids']
+                    bert_token_list=self.auto_tokenizer.convert_ids_to_tokens(bert_token_ids)
+                    tokens.append(bert_token_list[0])
+                    labels.append(label)
+                    new_label=copy.copy(label)
+                    # 分词把token和标签数据进行对齐操作。
+                    if len(label)>1 and label[0]=='B':
+                        new_label='I'+label[1:]
+                    for xtoken in bert_token_list[1:]:
+                        tokens.append(xtoken)
+                        labels.append(new_label)
+                else:
+                    if len(tokens) > 0:
+                        token_seq.append(tokens)
+                        label_seq.append(labels)
+                    tokens = []
+                    labels = [] 
+        return token_seq,label_seq
 
 class DefaultPrepareData(PrepareDataABC):
 
