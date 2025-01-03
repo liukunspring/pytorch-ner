@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 
 class PrepareDataABC(ABC):
     @abstractmethod
-    def repare_conll_data_format(
+    def prepare_conll_data_format(
         self,
         path: str,
         sep: str = "\t",
@@ -60,7 +60,6 @@ class DefaultPrepareData(PrepareDataABC):
                         label_seq.append(labels)
                     tokens = []
                     labels = []
-
         return token_seq, label_seq   
 
 def prepare_conll_data_format(

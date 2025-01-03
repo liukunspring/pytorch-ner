@@ -21,3 +21,4 @@ dist
 
 models/*
 !models/README.md
+runs/*
