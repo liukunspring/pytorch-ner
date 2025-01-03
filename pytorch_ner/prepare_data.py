@@ -1,7 +1,67 @@
 from typing import Dict, List, Tuple
 
 from tqdm import tqdm
+from abc import ABC, abstractmethod
 
+class PrepareDataABC(ABC):
+    @abstractmethod
+    def repare_conll_data_format(
+        self,
+        path: str,
+        sep: str = "\t",
+        lower: bool = True,
+        verbose: bool = True,
+    ) -> Tuple[List[List[str]], List[List[str]]]:
+        pass 
+
+class DefaultPrepareData(PrepareDataABC):
+
+    def prepare_conll_data_format(
+        self,
+        path: str,
+        sep: str = "\t",
+        lower: bool = True,
+        verbose: bool = True,
+    ) -> Tuple[List[List[str]], List[List[str]]]:
+        """
+        Prepare data in CoNNL like format.
+        Tokens and labels separated on each line.
+        Sentences are separated by empty line.
+        Labels should already be in necessary format, e.g. IO, BIO, BILUO, ...
+
+        Data example:
+        token_11    label_11
+        token_12    label_12
+
+        token_21    label_21
+        token_22    label_22
+        token_23    label_23
+
+        ...
+        """
+
+        token_seq = []
+        label_seq = []
+        with open(path, mode="r") as fp:
+            tokens = []
+            labels = []
+            if verbose:
+                fp = tqdm(fp)
+            for line in fp:
+                if line != "\n":
+                    token, label = line.strip().split(sep)
+                    if lower:
+                        token = token.lower()
+                    tokens.append(token)
+                    labels.append(label)
+                else:
+                    if len(tokens) > 0:
+                        token_seq.append(tokens)
+                        label_seq.append(labels)
+                    tokens = []
+                    labels = []
+
+        return token_seq, label_seq   
 
 def prepare_conll_data_format(
     path: str,

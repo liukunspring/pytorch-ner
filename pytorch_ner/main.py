@@ -15,6 +15,8 @@ from pytorch_ner.prepare_data import (
     get_label2idx,
     get_token2idx,
     prepare_conll_data_format,
+    DefaultPrepareData,
+    PrepareDataABC
 )
 from pytorch_ner.save import save_model
 from pytorch_ner.train import train_loop
@@ -38,14 +40,15 @@ def _train(
 
     # tokens / labels sequences
 
-    train_token_seq, train_label_seq = prepare_conll_data_format(
+    prepare_instance :PrepareDataABC=DefaultPrepareData()
+    train_token_seq, train_label_seq = prepare_instance.prepare_conll_data_format(
         path=config["data"]["train_data"]["path"],
         sep=config["data"]["train_data"]["sep"],
         lower=config["data"]["train_data"]["lower"],
         verbose=config["data"]["train_data"]["verbose"],
     )
 
-    valid_token_seq, valid_label_seq = prepare_conll_data_format(
+    valid_token_seq, valid_label_seq = prepare_instance.prepare_conll_data_format(
         path=config["data"]["valid_data"]["path"],
         sep=config["data"]["valid_data"]["sep"],
         lower=config["data"]["valid_data"]["lower"],
@@ -53,7 +56,7 @@ def _train(
     )
 
     if "test_data" in config["data"]:
-        test_token_seq, test_label_seq = prepare_conll_data_format(
+        test_token_seq, test_label_seq = prepare_instance.prepare_conll_data_format(
             path=config["data"]["test_data"]["path"],
             sep=config["data"]["test_data"]["sep"],
             lower=config["data"]["test_data"]["lower"],
