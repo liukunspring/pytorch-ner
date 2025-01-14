@@ -22,8 +22,8 @@ from pytorch_ner.prepare_data import (
 from pytorch_ner.save import save_model
 from pytorch_ner.train import train_loop
 from pytorch_ner.utils import set_global_seed, str_to_class
-
-
+from transformers import AutoTokenizer, AutoModel
+from transformers import BertPreTrainedModel
 def _train(
     config: Dict[str, Any],
     logger: logging.Logger,
@@ -160,7 +160,14 @@ def _train(
         num_embeddings=len(token2idx),
         embedding_dim=config["model"]["embedding"]["embedding_dim"],
     )
-
+    #尝试使用bert的embeding进行初始化。
+    model=AutoModel.from_pretrained('D:\\ProgramData\\google-bert-bert-base-uncased')
+    embedding_layer=model.embeddings.word_embeddings
+    embedding_layer.requires_grad_=True
+    embedding_layer_adapter=nn.Linear(in_features=768,out_features=config["model"]["embedding"]["embedding_dim"])
+    new_layer=nn.Sequential(embedding_layer,embedding_layer_adapter)
+    
+    
     rnn_layer = DynamicRNN(
         rnn_unit=str_to_class(
             module_name="torch.nn",
@@ -187,7 +194,7 @@ def _train(
     # TODO: add model architecture in config
     # TODO: add attention if needed
     model = BiLSTM(
-        embedding_layer=embedding_layer,
+        embedding_layer=new_layer,
         rnn_layer=rnn_layer,
         linear_head=linear_head,
     ).to(device)
