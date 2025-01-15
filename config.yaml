@@ -22,6 +22,9 @@ data:
     min_count: 1
     add_pad: true
     add_unk: true
+  token_prepare: 'BertTokenPrepareData'
+
+
 
 dataloader:
   preprocess: true

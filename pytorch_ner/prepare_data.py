@@ -16,6 +16,7 @@ class PrepareDataABC(ABC):
     ) -> Tuple[List[List[str]], List[List[str]]]:
         pass 
 class BertTokenPrepareData(PrepareDataABC): 
+    name='BertTokenPrepareData'
     def __init__(self):
         super().__init__()
         self.auto_tokenizer = AutoTokenizer.from_pretrained(os.path.join(PROJECT_ROOT,'bert-base-chinese'))
@@ -60,6 +61,7 @@ class BertTokenPrepareData(PrepareDataABC):
         return token_seq,label_seq
 
 class DefaultPrepareData(PrepareDataABC):
+    name='DefaultPrepareData'
 
     def prepare_conll_data_format(
         self,
@@ -107,6 +109,19 @@ class DefaultPrepareData(PrepareDataABC):
                     labels = []
         return token_seq, label_seq   
 
+
+class PrepareDataFactory:
+    @staticmethod
+    def create(prepareDataName:str)->PrepareDataABC:
+        if(prepareDataName==BertTokenPrepareData.name):
+            return BertTokenPrepareData()
+        if(prepareDataName==DefaultPrepareData.name):
+            return DefaultPrepareData()
+        '''有个bug默认的数据预处理，不支持bert的词向量，先这样吧'''
+        return DefaultPrepareData()
+        
+        
+    
 def prepare_conll_data_format(
     path: str,
     sep: str = "\t",
