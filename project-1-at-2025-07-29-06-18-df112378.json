@@ -1,0 +1,485 @@
+[
+  {
+    "text": "I PowerManager_screenOn: DisplayPowerStatesetColorFadeLevel: level=1.0",
+    "id": 1,
+    "label": [
+      {
+        "start": 67,
+        "end": 70,
+        "text": "1.0",
+        "labels": [
+          "FLOAT_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 1,
+    "created_at": "2025-04-09T14:53:57.985352Z",
+    "updated_at": "2025-04-11T00:50:12.936854Z",
+    "lead_time": 25.788
+  },
+  {
+    "text": "I SendBroadcastPermission: action:android.com.huawei.bone.NOTIFY_SPORT_DATA, mPermissionType:0",
+    "id": 2,
+    "label": [
+      {
+        "start": 93,
+        "end": 94,
+        "text": "0",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 10,
+    "created_at": "2025-04-15T23:57:54.025197Z",
+    "updated_at": "2025-04-15T23:57:54.025197Z",
+    "lead_time": 5.245
+  },
+  {
+    "text": "D DisplayPowerController: Animating brightness: target=21, rate=40",
+    "id": 3,
+    "label": [
+      {
+        "start": 55,
+        "end": 57,
+        "text": "21",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 64,
+        "end": 66,
+        "text": "40",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 11,
+    "created_at": "2025-04-15T23:57:59.857221Z",
+    "updated_at": "2025-04-15T23:57:59.857221Z",
+    "lead_time": 3.522
+  },
+  {
+    "text": "I PowerManager_screenOn: DisplayPowerController updatePowerState mPendingRequestLocked=policy=BRIGHT, useProximitySensor=true, useProximitySensorbyPhone=true, screenBrightness=33, screenAutoBrightnessAdjustment=0.0, brightnessSetByUser=true, useAutoBrightness=true, blockScreenOn=false, lowPowerMode=false, boostScreenBrightness=false, dozeScreenBrightness=-1, dozeScreenState=UNKNOWN, useTwilight=false, useSmartBacklight=true, brightnessWaitMode=false, brightnessWaitRet=true, screenAutoBrightness=-1, userId=0",
+    "id": 4,
+    "label": [
+      {
+        "start": 176,
+        "end": 178,
+        "text": "33",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 211,
+        "end": 214,
+        "text": "0.0",
+        "labels": [
+          "FLOAT_NUMER"
+        ]
+      },
+      {
+        "start": 357,
+        "end": 359,
+        "text": "-1",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 500,
+        "end": 502,
+        "text": "-1",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 511,
+        "end": 512,
+        "text": "0",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 12,
+    "created_at": "2025-04-15T23:58:04.967226Z",
+    "updated_at": "2025-04-15T23:58:04.967226Z",
+    "lead_time": 3.19
+  },
+  {
+    "text": "I PowerManager_screenOn: DisplayPowerState Updating screen state: state=ON, backlight=823",
+    "id": 5,
+    "label": [
+      {
+        "start": 86,
+        "end": 89,
+        "text": "823",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 13,
+    "created_at": "2025-04-15T23:58:16.308768Z",
+    "updated_at": "2025-04-15T23:58:16.308768Z",
+    "lead_time": 7.854
+  },
+  {
+    "text": "I HwLightsService: back light level before map = 823",
+    "id": 6,
+    "label": [
+      {
+        "start": 49,
+        "end": 52,
+        "text": "823",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 14,
+    "created_at": "2025-04-15T23:58:23.132824Z",
+    "updated_at": "2025-04-15T23:58:23.132824Z",
+    "lead_time": 2.428
+  },
+  {
+    "text": "D DisplayPowerController: Animating brightness: target=21, rate=40",
+    "id": 7,
+    "label": [
+      {
+        "start": 55,
+        "end": 57,
+        "text": "21",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 64,
+        "end": 66,
+        "text": "40",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 15,
+    "created_at": "2025-04-15T23:58:27.571953Z",
+    "updated_at": "2025-04-15T23:58:27.571953Z",
+    "lead_time": 2.355
+  },
+  {
+    "text": "D KGWallpaper_Magazine: getNextIndex: 0; from 5 to 5; size: 44",
+    "id": 8,
+    "label": [
+      {
+        "start": 38,
+        "end": 39,
+        "text": "0",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 46,
+        "end": 47,
+        "text": "5",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 51,
+        "end": 52,
+        "text": "5",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 60,
+        "end": 62,
+        "text": "44",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 2,
+    "created_at": "2025-04-11T00:52:45.744920Z",
+    "updated_at": "2025-04-11T00:52:45.744920Z",
+    "lead_time": 4.151
+  },
+  {
+    "text": "W HwLockScreenReporter: report result = falsereport type:162 msg:{picture: Deepwater-05-2.3.001-bigpicture_05_8.jpg, channelId: 05}",
+    "id": 10,
+    "label": [
+      {
+        "start": 57,
+        "end": 60,
+        "text": "162",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 128,
+        "end": 130,
+        "text": "05",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 3,
+    "created_at": "2025-04-11T00:52:53.305409Z",
+    "updated_at": "2025-04-11T00:52:53.305409Z",
+    "lead_time": 2.812
+  },
+  {
+    "text": "I OucScreenOnCounter: Screen already turned on at: 1481974212",
+    "id": 11,
+    "label": [
+      {
+        "start": 51,
+        "end": 61,
+        "text": "1481974212",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 4,
+    "created_at": "2025-04-11T00:52:58.922681Z",
+    "updated_at": "2025-04-11T00:52:58.922681Z",
+    "lead_time": 3.694
+  },
+  {
+    "text": "I SendBroadcastPermission: action:android.com.huawei.bone.NOTIFY_SPORT_DATA, mPermissionType:0",
+    "id": 12,
+    "label": [
+      {
+        "start": 93,
+        "end": 94,
+        "text": "0",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 5,
+    "created_at": "2025-04-11T00:53:05.250400Z",
+    "updated_at": "2025-04-11T00:53:05.250400Z",
+    "lead_time": 2.625
+  },
+  {
+    "text": "I Step_HSNH: 20002302|upDateHealthNotification()|89|2.98|4180",
+    "id": 14,
+    "label": [
+      {
+        "start": 13,
+        "end": 21,
+        "text": "20002302",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 49,
+        "end": 51,
+        "text": "89",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 57,
+        "end": 61,
+        "text": "4180",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 52,
+        "end": 56,
+        "text": "2.98",
+        "labels": [
+          "FLOAT_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 16,
+    "created_at": "2025-04-16T00:07:53.257971Z",
+    "updated_at": "2025-04-16T00:07:53.257971Z",
+    "lead_time": 414.762
+  },
+  {
+    "text": "I HwSystemManager: ITrafficInfo:ITrafficInfo create 301updateBytes = 1769320345",
+    "id": 15,
+    "label": [
+      {
+        "start": 52,
+        "end": 55,
+        "text": "301",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 69,
+        "end": 79,
+        "text": "1769320345",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 6,
+    "created_at": "2025-04-11T00:53:37.574930Z",
+    "updated_at": "2025-04-11T00:53:37.574930Z",
+    "lead_time": 6.809
+  },
+  {
+    "text": "I Step_HSNH: 20002302|rebuild notification",
+    "id": 16,
+    "label": [
+      {
+        "start": 13,
+        "end": 21,
+        "text": "20002302",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 7,
+    "created_at": "2025-04-11T00:53:43.810232Z",
+    "updated_at": "2025-04-11T00:53:43.810232Z",
+    "lead_time": 2.757
+  },
+  {
+    "text": "I EventCenter: ContentChange for slot: 1",
+    "id": 17,
+    "label": [
+      {
+        "start": 39,
+        "end": 40,
+        "text": "1",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 8,
+    "created_at": "2025-04-11T00:53:48.128913Z",
+    "updated_at": "2025-04-11T00:53:48.128913Z",
+    "lead_time": 2.231
+  },
+  {
+    "text": "D PowerManagerService: ready=true,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0",
+    "id": 18,
+    "label": [
+      {
+        "start": 41,
+        "end": 42,
+        "text": "3",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 55,
+        "end": 56,
+        "text": "1",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 165,
+        "end": 167,
+        "text": "33",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 173,
+        "end": 175,
+        "text": "-1",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 190,
+        "end": 191,
+        "text": "0",
+        "labels": [
+          "COMMON_NUMER"
+        ]
+      },
+      {
+        "start": 180,
+        "end": 183,
+        "text": "0.0",
+        "labels": [
+          "FLOAT_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 17,
+    "created_at": "2025-07-28T14:39:34.055751Z",
+    "updated_at": "2025-07-28T14:39:34.055751Z",
+    "lead_time": 128.304
+  },
+  {
+    "text": "I HwBrightnessUtils: APS brightness=20.0,ConvertToPercentage=0.21667233",
+    "id": 19,
+    "label": [
+      {
+        "start": 36,
+        "end": 40,
+        "text": "20.0",
+        "labels": [
+          "FLOAT_NUMER"
+        ]
+      },
+      {
+        "start": 61,
+        "end": 71,
+        "text": "0.21667233",
+        "labels": [
+          "FLOAT_NUMER"
+        ]
+      }
+    ],
+    "annotator": 2,
+    "annotation_id": 9,
+    "created_at": "2025-04-11T00:54:09.513934Z",
+    "updated_at": "2025-04-11T00:54:09.513934Z",
+    "lead_time": 5.571
+  }
+]
